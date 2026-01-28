@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(pip3 install:*)",
+      "mcp__claude-in-chrome__*",
+      "WebFetch(domain:warsearch.ru)",
+      "WebFetch(domain:pamyat-naroda.ru)"
+    ]
+  }
+}
