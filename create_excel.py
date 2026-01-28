@@ -51,8 +51,8 @@ def create_results_excel(
     ws1.title = "Итог"
 
     headers1 = [
-        "ФИО", "Год рождения", "Статус", "Ссылка warsearch",
-        "Ссылка Память народа", "Основание", "Источник географии"
+        "ФИО", "Год рождения", "Статус", "Ссылка Память народа",
+        "Основание", "Источник географии"
     ]
     ws1.append(headers1)
 
@@ -68,7 +68,6 @@ def create_results_excel(
             row.get('name', ''),
             row.get('birth_year', ''),
             row.get('status', ''),
-            row.get('warsearch_url', ''),
             row.get('pamyat_url', ''),
             row.get('confirmation_level', ''),
             row.get('geography_source', '')
@@ -78,8 +77,7 @@ def create_results_excel(
     for col in range(1, len(headers1) + 1):
         ws1.column_dimensions[get_column_letter(col)].width = 20
     ws1.column_dimensions['A'].width = 35  # ФИО шире
-    ws1.column_dimensions['D'].width = 50  # URL
-    ws1.column_dimensions['E'].width = 50  # URL
+    ws1.column_dimensions['D'].width = 50  # URL Память народа
 
     # === Лист 2: Кандидаты ===
     ws2 = wb.create_sheet("Кандидаты")
@@ -198,7 +196,6 @@ if __name__ == "__main__":
                 'name': 'Иванов Иван Иванович',
                 'birth_year': '1920',
                 'status': 'Погиб',
-                'warsearch_url': 'https://warsearch.ru/card/123',
                 'pamyat_url': 'https://pamyat-naroda.ru/heroes/123',
                 'confirmation_level': 'A',
                 'geography_source': 'Место рождения'
